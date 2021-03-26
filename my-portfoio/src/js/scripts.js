@@ -30,9 +30,10 @@
   /**
    * Easy on scroll event listener 
    */
-  const onscroll = (el, listener) => {
+ const onscroll = (el, listener) => {
     el.addEventListener('scroll', listener)
   }
+  
 
   /**
    * Navbar links active state on scroll

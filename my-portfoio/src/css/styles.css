@@ -124,6 +124,39 @@ button:hover {
 .main-content {
   padding-top: 140px;
 }
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 1rem;
+  bottom: 0.8rem;
+  z-index: 996;
+  background: #f37121;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+
+.back-to-top i {
+  font-size: 28px;
+  color: #fff;
+  line-height: 0;
+}
+
+.back-to-top:hover {
+  background: #c70039;
+  color: #c70039;
+}
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -175,7 +208,6 @@ button:hover {
   white-space: nowrap;
   transition: 0.3s;
 }
-
 .navbar a i {
   font-size: 12px;
   line-height: 0;
@@ -187,11 +219,12 @@ button:hover {
 .navbar li:hover > a {
   color: #c70039;
 }
+
 /**
 * Mobile Navigation 
 */
 .mobile-nav-toggle {
-  color: #4b4a4a;
+  color: #f37121;
   font-size: 28px;
   cursor: pointer;
   display: none;
@@ -219,7 +252,7 @@ button:hover {
   right: 0;
   left: 0;
   bottom: 0;
-  background: rgba(49, 49, 49, 0.9);
+  background: rgba(0, 45, 91, 0.1);
   transition: 0.3s;
 }
 
@@ -257,6 +290,21 @@ button:hover {
 
 .navbar-mobile .getstarted {
   margin: 15px;
+}
+/*navbarbar media query*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  .navbar-mobile a {
+    font-size: 18pt;
+    font-weight: 800;
+    color: #111d5e;
+  }
+}
+@media (max-width: 480px) {
+  .navbar-mobile a {
+    font-size: 18pt;
+    font-weight: 800;
+    color: #111d5e;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -311,7 +359,40 @@ button:hover {
   color: #f37121;
   font-size: 1.5rem;
 }
+/*hero media queries for tablet*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  #hero .hero-content h1,
+  h2,
+  p {
+    text-align: center;
+  }
+  #hero .hero-content p {
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
 
+  #hero .hero-content .list-social {
+    display: flex;
+    justify-content: space-around;
+  }
+  #hero .hero-content .section-button {
+    margin: 1.5rem 0 0 8rem;
+  }
+
+  #hero .hero-content .section-button a {
+    font-weight: 800;
+    font-size: 2rem;
+  }
+}
+/*media queries for mobile device*/
+@media (max-width: 480px) {
+  #hero .hero-content .section-button {
+    margin-left: 5rem;
+  }
+  #hero .hero-content .github-link {
+    margin-left: 7.4rem;
+  }
+}
 /*-----------------------------------------------------------------------------------*/
 /*  About
 /*-----------------------------------------------------------------------------------*/
@@ -351,6 +432,49 @@ button:hover {
   color: #010114;
 }
 
+/*tablet media queries*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  #about .div-img-bg {
+    margin: 1rem 1.6rem 1rem 1.6rem;
+    border-radius: 12px;
+  }
+  #about .div-img-bg .about-img {
+    margin-right: 15px;
+  }
+  #about .about-descr .p-heading {
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+  }
+  #about .about-descr .separator {
+    text-align: center;
+    margin-left: 1.8rem;
+    font-size: 1.5rem;
+  }
+  #about .about-descr button {
+    margin: 2rem 0 0 16rem;
+  }
+  #about .about-descr button a {
+    font-weight: bolder;
+  }
+}
+/*mobile device*/
+@media (max-width: 480px) {
+  #about .div-img-bg {
+    margin: 1rem 1.1rem 1rem 1.1rem;
+  }
+  #about .div-img-bg .about-img {
+    margin: 0 1.4rem 0 0;
+  }
+  #about .about-descr .separator {
+  }
+  #about .about-descr .p-heading {
+    font-size: 2rem;
+  }
+  #about .about-descr button {
+    margin: 2rem 4.5rem 0 4.5rem;
+  }
+}
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
@@ -374,6 +498,32 @@ button:hover {
 }
 #services .service-item .service-img img {
   margin-bottom: 1.4rem;
+}
+/* media queries for tablet*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  #services .service-item {
+    height: 650px;
+    margin: 0 1.2rem 2.5rem 0;
+  }
+  #services .service-description p {
+    font-size: 1.1rem;
+    font-weight: 400;
+  }
+  #services .service-title h5 {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+}
+/* media queries on mobile device*/
+@media (max-width: 480px) {
+  #services .service-item {
+    margin: 0 2rem 2.5rem 2rem;
+    height: 700px;
+    font-size: 3rem;
+  }
+  #services .service-item .service-description p {
+    font-size: 1.2rem;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -416,7 +566,12 @@ button:hover {
 }
 
 #portfolio .portfolio-item {
-  margin-bottom: 30px;
+  margin-bottom: 1.8rem;
+  height: 22rem;
+}
+#portfolio .portfolio-item img {
+  width: 100%;
+  height: 100%;
 }
 
 #portfolio .portfolio-item .portfolio-info {
@@ -469,6 +624,27 @@ button:hover {
   opacity: 1;
   bottom: 20px;
 }
+/*media queries for tablet devices*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  #portfolio .portfolio-container .portfolio-item {
+    height: 20rem;
+  }
+  #portfolio .portfolio-container .portfolio-item img {
+    width: 100%;
+    height: 100%;
+  }
+}
+/*media queries on mobile device*/
+@media (max-width: 480px) {
+  #portfolio .portfolio-container .portfolio-item {
+    height: 18rem;
+    margin: 0 0 2.5rem 2.2rem;
+  }
+  #portfolio .portfolio-container .portfolio-item img {
+    height: 100%;
+    width: 100%;
+  }
+}
 
 /*--------------------------------------------------------------
 # Portfolio Details
@@ -479,6 +655,7 @@ button:hover {
 
 .portfolio-details .portfolio-details-slider img {
   width: 100%;
+  height: 100%;
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination {
@@ -540,7 +717,34 @@ button:hover {
 .portfolio-details .portfolio-description p {
   padding: 0;
 }
-
+/*media queries for tablet*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  .portfolio-details .portfolio-description h2 {
+    font-weight: 800;
+  }
+  .portfolio-details .portfolio-description p {
+    font-size: 22px;
+  }
+  .portfolio-details .portfolio-info h3 {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .portfolio-details .portfolio-info ul {
+    font-size: 22px;
+  }
+}
+/*media queries for mobile devices*/
+@media (max-width: 480px) {
+  .portfolio-details .portfolio-description p {
+    font-size: 1.3rem;
+  }
+  .portfolio-details .portfolio-info ul {
+    font-size: 1.3rem;
+  }
+  .portfolio-details .portfolio-description {
+    text-align: center;
+  }
+}
 /*--------------------------------------------------------------
 # Breadcrumbs
 --------------------------------------------------------------*/
@@ -599,6 +803,7 @@ button:hover {
     display: inline-block;
   }
 }
+
 /*--------------------------------------------------------------
 # Blog
 --------------------------------------------------------------*/
@@ -632,6 +837,12 @@ p {
   font-weight: 600;
 }
 
+@media (max-width: 991px) {
+  #blogs .blog-item {
+    height: 700px;
+    margin: 0 2.5rem 2.8rem 2.5rem;
+  }
+}
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
@@ -650,6 +861,13 @@ p {
 #contact span {
   font-size: 25pt;
   font-weight: 700;
+}
+/*contact media queries*/
+@media (max-width: 480px) {
+  #contact span {
+    font-size: 1.2rem;
+    font-weight: 800;
+  }
 }
 /*--------------------------------------------------------------
 # Footer
@@ -698,4 +916,14 @@ p {
   margin-top: 0;
   text-transform: uppercase;
   color: #fff;
+}
+/*footer media queries*/
+@media (max-width: 480px) {
+  #footer p {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  #footer p span {
+    font-size: 1.4rem;
+  }
 }
